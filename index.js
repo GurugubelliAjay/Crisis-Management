@@ -50,6 +50,18 @@ app.get('/volunteer/signup',(req,res)=>{
 app.get('/volunteer/login',(req,res)=>{
     res.render('volunteers/login.ejs')
 })
+app.get('/volunteer/dashboard',(req,res)=>{
+    res.render('volunteers/dashboard')
+})
+app.get('/volunteer/requests',(req,res)=>{
+    res.render('volunteers/requests')
+})
+app.get('/volunteer/complaints',(req,res)=>{
+    res.render('volunteers/complaints')
+})
+app.get('/volunteer/resources',(req,res)=>{
+    res.render('volunteers/resources')
+})
 app.post('/volunteer/login',async(req,res)=>{
     const volunteer=req.body.volunteer;
     const foundvolunteer=await Volunteer.findOne({email:volunteer.email,password:volunteer.password});
